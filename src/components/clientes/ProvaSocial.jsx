@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './provaSocial.css';
-import info from './info.json'; // Importa o JSON diretamente
+import info from './info.json';
 
 function ProvaSocial() {
     const [data, setData] = useState([]);
@@ -16,7 +16,7 @@ function ProvaSocial() {
         } catch (err) {
             setError(err);
         }
-    }, []);
+    }, []); 
 
     if (error) {
         return <p>Error: {error.message}</p>;
