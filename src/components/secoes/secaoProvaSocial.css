@@ -14,11 +14,9 @@ hr {
 }
 
 .wave {
-    margin: 0px;
-    padding: 0px;
-    transform: rotateY(180deg);
-    margin-bottom: -50px;
     
+    transform: rotateX(180deg);
+   
 }
 
 
