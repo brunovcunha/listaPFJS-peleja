@@ -1,45 +1,45 @@
-import React from 'react'
-import './provaSocial.css'
+import React, { useState, useEffect } from 'react';
+import './provaSocial.css';
+import info from './info.json'; // Importa o JSON diretamente
 
 function ProvaSocial() {
+    const [data, setData] = useState([]);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        try {
+            if (info && info.depoimentos) {
+                setData(info.depoimentos);
+            } else {
+                throw new Error('Dados não encontrados');
+            }
+        } catch (err) {
+            setError(err);
+        }
+    }, []);
+
+    if (error) {
+        return <p>Error: {error.message}</p>;
+    }
+
+    if (data.length === 0) {
+        return <p>Loading...</p>;
+    }
+
     return (
         <div className='prova-social'>
-
-            <div className='box-prova'>
-
-                <div className='fotoCliente'>
-                    <img src="https://img.freepik.com/fotos-gratis/mulher-jovem-confiante-mostrando-o-polegar-para-cima-e-sorrindo-resposta-positiva-aprovacao-expressa-gosto-e-elogio-do-produto-em-pe-sobre-uma-parede-branca_176420-42667.jpg?t=st=1724178925~exp=1724182525~hmac=4148dc5d0da757f2c2a432e6984c10dc0e974660eca5627fd4243f4024760467&w=826" alt="" />
-                </div>
+            {data.map((item, index) => (
+                <div key={index} className='box-prova'>
+                    <div className='fotoCliente'>
+                        <img src={item['foto-cliente']} alt="Cliente" />
+                    </div>
                     <p>
-                    “Dá pra ver que a equipe é super capacitada e realmente se importa com a gente.  Profissionalismo e eficiência de primeira! Super recomendo.”
+                        {item['prova-social']}
                     </p>
-                
-            </div>
-
-            <div className='box-prova'>
-
-                <div className='fotoCliente'>
-                    <img src="https://img.freepik.com/fotos-gratis/mulher-jovem-confiante-mostrando-o-polegar-para-cima-e-sorrindo-resposta-positiva-aprovacao-expressa-gosto-e-elogio-do-produto-em-pe-sobre-uma-parede-branca_176420-42667.jpg?t=st=1724178925~exp=1724182525~hmac=4148dc5d0da757f2c2a432e6984c10dc0e974660eca5627fd4243f4024760467&w=826" alt="" />
                 </div>
-                    <p>
-                    “Dá pra ver que a equipe é super capacitada e realmente se importa com a gente.  Profissionalismo e eficiência de primeira! Super recomendo.”
-                    </p>
-                
-            </div>
-
-            <div className='box-prova'>
-
-                <div className='fotoCliente'>
-                    <img src="https://img.freepik.com/fotos-gratis/mulher-jovem-confiante-mostrando-o-polegar-para-cima-e-sorrindo-resposta-positiva-aprovacao-expressa-gosto-e-elogio-do-produto-em-pe-sobre-uma-parede-branca_176420-42667.jpg?t=st=1724178925~exp=1724182525~hmac=4148dc5d0da757f2c2a432e6984c10dc0e974660eca5627fd4243f4024760467&w=826" alt="" />
-                </div>
-                    <p>
-                    “Dá pra ver que a equipe é super capacitada e realmente se importa com a gente.  Profissionalismo e eficiência de primeira! Super recomendo.”
-                    </p>
-                
-            </div>
-
+            ))}
         </div>
-    )
+    );
 }
 
-export default ProvaSocial
+export default ProvaSocial;

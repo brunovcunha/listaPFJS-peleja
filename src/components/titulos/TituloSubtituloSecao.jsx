@@ -7,8 +7,7 @@ function TituloSubtituloSecao({titulos}) {
         <div className='titulos'>
             <h1>{titulos.titulo}</h1>
             <hr />
-            
-            
+   
             <h2>{titulos.subtitulo}</h2>
         </div>
     )

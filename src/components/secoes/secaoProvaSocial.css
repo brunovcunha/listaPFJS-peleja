@@ -1,0 +1,26 @@
+.secao-prova-social{
+    background-color: #372B2B;
+    padding: 20px;
+}
+
+h1 , h2{
+    color: #F5F5F5;
+    font-weight: 800;
+}
+
+hr {
+    background-color: #F5F5F5;
+
+}
+
+.wave {
+    margin: 0px;
+    padding: 0px;
+    transform: rotateY(180deg);
+    
+    margin-bottom: -50px;
+    
+}
+
+
+

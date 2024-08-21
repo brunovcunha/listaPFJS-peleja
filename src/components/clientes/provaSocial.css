@@ -1,6 +1,4 @@
-*{
-    border: 1px solid red;
-}
+
 .prova-social {
     max-width: 900px;
     margin: auto;
@@ -16,15 +14,15 @@
 
 .box-prova {
     width: 260px;
-    height: 300px;
-    background-color: #F6DE26;
+    height: 330px;
+    background-color: #E9DA6E;
     text-align: center;
     border-radius: 20px;
     position: relative;
 }
 
 .fotoCliente {
-    border: 10px solid #F6DE26;
+    border: 10px solid #E9DA6E;
     width: 160px;
     height: 160px;
     background-color: gray;
